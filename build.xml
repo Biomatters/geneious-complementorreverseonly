@@ -1,6 +1,6 @@
 <project xmlns:ivy="antlib:org.apache.ivy.ant" name="ComplementOrReverseOnly" default="create-plugin" basedir=".">
 
-    <property name="version-regex-pattern" value=".*PLUGIN_VERSION\s+=\s+&quot;(\d+\.\d+\.\d+)&quot;;.*"/>
+    <property name="version-regex-pattern" value=".*PLUGIN_VERSION\s+=\s+&quot;(\d+\.\d+(\.\d+)?)&quot;;.*"/>
 
     <loadfile property="plugin.version" srcfile="src/com/biomatters/plugins/ComplementOrReverseOnly/ComplementOrReverseOnlyPlugin.java">
         <filterchain>
