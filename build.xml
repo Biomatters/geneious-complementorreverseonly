@@ -58,6 +58,9 @@
                 <exclude name="GeneiousPublicAPI*.jar"/>
                 <exclude name="jdom*.jar"/>
                 <exclude name="jebl*.jar"/>
+                <!--Exclude test libs, not needed at runtime-->
+                <exclude name="junit*.jar"/>
+                <exclude name="hamcrest*.jar"/>
             </fileset>
         </copy>
 
