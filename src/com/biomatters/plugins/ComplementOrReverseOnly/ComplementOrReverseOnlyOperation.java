@@ -6,7 +6,7 @@ import com.biomatters.geneious.publicapi.documents.sequence.NucleotideSequenceDo
 import com.biomatters.geneious.publicapi.documents.sequence.SequenceCharSequence;
 import com.biomatters.geneious.publicapi.documents.sequence.SequenceDocument;
 import com.biomatters.geneious.publicapi.implementations.SequenceExtractionUtilities;
-import com.biomatters.geneious.publicapi.implementations.sequence.DefaultNucleotideSequence;
+import com.biomatters.geneious.publicapi.implementations.sequence.DefaultSequenceDocument;
 import com.biomatters.geneious.publicapi.plugin.*;
 import com.biomatters.geneious.publicapi.utilities.Interval;
 import com.biomatters.geneious.publicapi.utilities.SequenceUtilities;
@@ -147,7 +147,7 @@ public class ComplementOrReverseOnlyOperation extends DocumentOperation {
             sequence = SequenceExtractionUtilities.reverseComplement(sequence);
         }
         String name =sequence.getName();
-        DefaultNucleotideSequence newSequence = (DefaultNucleotideSequence) SequenceUtilities.createSequenceCopyEditable(sequence);
+        DefaultSequenceDocument newSequence = SequenceUtilities.createSequenceCopyEditable(sequence);
         SequenceCharSequence charSequence = newSequence.getCharSequence();
         char[] newCharSequence = new char[charSequence.length()];
         for(int i=0;i<newCharSequence.length;i++) {
@@ -163,7 +163,7 @@ public class ComplementOrReverseOnlyOperation extends DocumentOperation {
         }
         newSequence.setSequenceAndAnnotations(new String(newCharSequence),newSequence.getSequenceAnnotations());
         newSequence.setName(SequenceExtractionUtilities.getComplementWithoutReverseSequenceName(name));
-        return newSequence;
+        return (NucleotideSequenceDocument) newSequence;
     }
 
 }
