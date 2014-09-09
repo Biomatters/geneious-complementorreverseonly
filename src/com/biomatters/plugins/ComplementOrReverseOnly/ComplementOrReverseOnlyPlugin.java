@@ -23,8 +23,9 @@ public class ComplementOrReverseOnlyPlugin extends GeneiousPlugin {
 
     /**
      * 1.0 released 2012-10-04
+     * 1.1 fixed incompatibility with Geneious R8
      */
-    public static final String PLUGIN_VERSION = "1.0";
+    public static final String PLUGIN_VERSION = "1.1";
 
     @Override
     public String getAuthors() {
